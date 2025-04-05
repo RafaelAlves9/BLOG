@@ -69,7 +69,7 @@ export function Header() {
                {user ? (
                   <div className="flex items-center gap-4">
                      {user.role === "admin" && (
-                        <Link href="/admin">
+                        <Link href="/admin/posts">
                            <Button
                               variant="ghost"
                               className="text-gray-400 hover:text-white"

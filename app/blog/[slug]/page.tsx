@@ -23,7 +23,7 @@ interface BlogPostPageProps {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-   const post = await getPostBySlug(params.slug);
+   const post = await getPostBySlug(params.slug?.replaceAll("-", " "));
 
    if (!post) {
       notFound();
