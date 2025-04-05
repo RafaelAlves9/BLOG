@@ -128,7 +128,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                {/* Tags */}
                <div className="mt-8 flex flex-wrap gap-2">
                   {post.tags.map((tag) => (
-                     <Link key={tag} href={`/blog?tag=${tag}`}>
+                     <Link key={tag} href={`/blog?tag=${tag.replaceAll(" ", "-")}`}>
                         <Badge
                            variant="outline"
                            className="border-gray-700 text-cyan-400 hover:bg-gray-800"

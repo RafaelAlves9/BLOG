@@ -195,7 +195,7 @@ export default function AdminPostsPage() {
                             asChild
                             className="text-gray-300 hover:text-white focus:text-white focus:bg-gray-800"
                           >
-                            <Link href={`/blog/${post.slug}`}>
+                            <Link href={`/blog/${post.slug.replaceAll(" ", "-")}`}>
                               <Eye className="mr-2 h-4 w-4" />
                               View
                             </Link>

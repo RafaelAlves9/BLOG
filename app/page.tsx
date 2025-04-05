@@ -171,7 +171,7 @@ export default async function Home() {
                                     </div>
                                  </div>
                                  <h3 className="text-lg font-semibold mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-                                    <Link href={`/blog/${post.slug}`}>
+                                    <Link href={`/blog/${post.slug?.replaceAll(" ", "-")}`}>
                                        {post.title}
                                     </Link>
                                  </h3>
@@ -218,7 +218,7 @@ export default async function Home() {
                                     </div>
                                  </div>
                                  <h3 className="text-lg font-semibold mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-                                    <Link href={`/blog/${post.slug}`}>
+                                    <Link href={`/blog/${post.slug.replaceAll(" ", "-")}`}>
                                        {post.title}
                                     </Link>
                                  </h3>

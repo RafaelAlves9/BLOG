@@ -56,7 +56,7 @@ export default async function BlogPage({
                 </Button>
               </Link>
               {tags.slice(0, 4).map((t) => (
-                <Link key={t.id} href={`/blog?tag=${t.name}`}>
+                <Link key={t.id} href={`/blog?tag=${t.name.replaceAll(" ", "-")}`}>
                   <Button
                     variant={tag === t.name ? "default" : "outline"}
                     size="sm"
