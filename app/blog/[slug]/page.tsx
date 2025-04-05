@@ -23,7 +23,9 @@ interface BlogPostPageProps {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-   const post = await getPostBySlug(params.slug?.replaceAll("-", " "));
+   const post = await getPostBySlug(
+      params.slug?.toLocaleLowerCase().replaceAll("-", " ")
+   );
 
    if (!post) {
       notFound();
@@ -128,7 +130,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                {/* Tags */}
                <div className="mt-8 flex flex-wrap gap-2">
                   {post.tags.map((tag) => (
-                     <Link key={tag} href={`/blog?tag=${tag.replaceAll(" ", "-")}`}>
+                     <Link
+                        key={tag}
+                        href={`/blog?tag=${tag.replaceAll(" ", "-")}`}
+                     >
                         <Badge
                            variant="outline"
                            className="border-gray-700 text-cyan-400 hover:bg-gray-800"

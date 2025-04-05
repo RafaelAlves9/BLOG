@@ -166,7 +166,7 @@ export function Header() {
                         <>
                            {user.role === "admin" && (
                               <Link
-                                 href="/admin"
+                                 href="/admin/posts"
                                  onClick={() => setIsMenuOpen(false)}
                               >
                                  <Button
